@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <title>Curvas de Bezier (PG)</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row"> <!-- Container -->
+            <div class="col-3">
+                <div class="row"> <!-- Primeira caixa -->
+                    <div class="card" style="width: 100%">
+                        <div class="card-header">Curvas</div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
+                                <button id="btn-delete-curve" type="button" class="btn btn-dark">Apagar</button>
+                                <button id="btn-create-curve" type="button" class="btn btn-dark">Adicionar</button>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%;">                                
+                                <button id="btn-previous-curve" type="button" class="btn btn-outline-primary">Anterior</button>
+                                <button id="btn-next-curve" type="button" class="btn btn-outline-primary">Próxima</button>
+                              </div>
+                          </li>
+                        </ul>
+                      </div>
+                </div> <!-- Primeira caixa -->
+                <div class="row"> <!-- Segunda caixa -->
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">Pontos</div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 100%;">
+                                <button id="btn-delete-point" type="button" class="btn btn-dark">Deletar</button>
+                                <button id="btn-edit-point" type="button" class="btn btn-light">Editar</button>
+                                <button id="btn-create-point" type="button" class="btn btn-dark">Adicionar</button>
+                              </div>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example" style="width: 100%;">                                
+                                <button id="btn-previous-point" type="button" class="btn btn-outline-primary">Anterior</button>
+                                <button id="btn-next-point" type="button" class="btn btn-outline-primary">Próximo</button>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                </div> <!-- Segunda caixa -->    
+                <div class="row"> <!-- Terceira caixa -->
+                    <div class="card" style="width: 100%;"> 
+                        <div class="card-header">Configurar Visualização</div>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item"> 
+                            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group" >
+                                <input type="checkbox" class="btn-check" id="btn-show-curves" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btn-show-curves">Não Ver Curvas</label>
+
+                                <input type="checkbox" class="btn-check" id="btn-show-points" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btn-show-points">Não Ver Pontos</label>
+                            
+                                <input type="checkbox" class="btn-check" id="btn-show-polygonal" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btn-show-polygonal">Não Ver Poligonais</label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            <input id="evaluations" type="text" class="form-control" placeholder="Número de avaliações" style="width: 100%;">
+                          </li>
+                        </ul>
+                      </div>       
+                </div> <!-- Terceira caixa -->        
+            </div>
+    
+            <div class="col-9" >
+                <canvas id="canvas" width="900px;" height="535px;"  ></canvas> <!-- Tela preta 900 x 535 -->
+            </div>
+        </div> <!-- Container -->
+    </div> <!-- Container -->
+  </body>
+</html>
